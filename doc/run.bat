@@ -1,0 +1,1 @@
+java -Dfile.encoding=utf-8 -jar movie-parse-1.0.0.jar

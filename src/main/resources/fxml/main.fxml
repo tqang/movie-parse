@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="605.0" prefWidth="894.0" stylesheets="@../css/default.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.crawler.fx.controller.MainLayoutController">
+    <children>
+        <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#selectDirectory" text="选择文件" />
+        <Button layoutX="94.0" layoutY="14.0" mnemonicParsing="false" onAction="#refreshFile" text="刷新文件" />
+        <TableView fx:id="fileTableView" layoutX="14.0" layoutY="64.0" prefHeight="222.0" prefWidth="496.0">
+            <columns>
+                <TableColumn fx:id="colOriginalFileName" prefWidth="180.0" text="原始文件名" />
+                <TableColumn fx:id="colFileName" prefWidth="180.0" text="识别文件名" />
+                <TableColumn fx:id="colFileStatus" prefWidth="75.0" text="状态" />
+            </columns>
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+            </columnResizePolicy>
+        </TableView>
+        <HBox layoutX="750.0" layoutY="479.0" prefHeight="23.0" prefWidth="115.0" spacing="30.0" />
+        <Label layoutX="183.0" layoutY="18.0" text="文件路径：" />
+        <Label fx:id="filePathLabel" layoutX="243.0" layoutY="18.0" prefHeight="15.0" prefWidth="261.0" AnchorPane.leftAnchor="243.0" />
+        <HBox layoutX="420.0" layoutY="303.0" prefHeight="36.0" prefWidth="96.0" spacing="30.0">
+            <children>
+                <Button mnemonicParsing="false" onAction="#parseFile" text="解析文件" />
+            </children>
+        </HBox>
+      <TextArea fx:id="logTextArea" layoutX="24.0" layoutY="368.0" prefHeight="222.0" prefWidth="844.0" />
+      <Label layoutX="516.0" layoutY="30.0" prefHeight="15.0" prefWidth="60.0" text="移动文件：" />
+      <Label layoutX="525.0" layoutY="64.0" text="原始目录：" />
+      <Label layoutX="525.0" layoutY="113.0" text="目标目录：" />
+      <TextField fx:id="srcFilePath" layoutX="604.0" layoutY="58.0" prefHeight="36.0" prefWidth="261.0" />
+      <TextField fx:id="tarFilePath" layoutX="604.0" layoutY="107.0" prefHeight="36.0" prefWidth="261.0" />
+      <Label fx:id="moveMovieLog" layoutX="576.0" layoutY="30.0" text="未开始" />
+          <Button layoutX="825.0" layoutY="164.0" mnemonicParsing="false" onAction="#moveMovieFile" text="移动" />
+    </children>
+</AnchorPane>
